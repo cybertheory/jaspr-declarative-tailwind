@@ -7,7 +7,7 @@ A declarative Tailwind class generator written in dart. Create a list or string 
 The Tailwind Class generator can be used in a Jaspr app or in any other dart project where inline Tailwind utility classes are needed.
 It allows you to generate the needed Tailwind classes in a Flutter-like structure.
 
-If you are using the declarative Tailwind generator for Jaspr, make sure you have jaspr installed and (setup)[https://docs.page/schultek/jaspr/quick-start].
+If you are using the declarative Tailwind generator for Jaspr, make sure you have jaspr installed and [setup](https://docs.page/schultek/jaspr/quick-start).
 
 Then create a new jaspr project.
 ```bash
