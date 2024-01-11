@@ -259,17 +259,26 @@ enum TWColor {
   pink900,
 }
 
+extension TWColorExtension on TWColor {
+  String get name {
+    final colorName = toString().toLowerCase().split('.').last;
+    final dashIndex = colorName.indexOf(RegExp(r'[0-9]'));
+    final color = colorName.substring(0, dashIndex);
+    final number = colorName.substring(dashIndex);
+    return '$color-$number';
+  } // remove 'span' prefix
+}
+
 class TWBorderColor {
-  
-  final TWColor? color;
-  final TWColor? left;
-  final TWColor? top;
-  final TWColor? bottom;
-  final TWColor? right;
-  final TWColor? x;
-  final TWColor? y;
-  final TWColor? inlineStart;
-  final TWColor? inlineEnd;
+  late final TWColor? color;
+  late final TWColor? left;
+  late final TWColor? top;
+  late final TWColor? bottom;
+  late final TWColor? right;
+  late final TWColor? x;
+  late final TWColor? y;
+  late final TWColor? inlineStart;
+  late final TWColor? inlineEnd;
 
   TWBorderColor.all({required this.color});
 
@@ -283,31 +292,106 @@ class TWBorderColor {
 
   @override
   String toString() {
-     if (container != null) container!.name,
-      if (mxAuto) 'mx-auto',
-      if (flex != null) ...['flex', 'flex-${flex!.name}'],
-      if (flexDirection != null) 'flex-${flexDirection!.name}',
+    String classes = "";
+    if (color != null) {
+      classes += " border-color-$color";
+    } else if (left != null) {
+      classes += " border-color-l-$left";
+    } else if (right != null) {
+      classes += " border-color-r-$right";
+    } else if (top != null) {
+      classes += " border-color-t-$top";
+    } else if (bottom != null) {
+      classes += " border-color-b-$bottom";
+    } else if (x != null) {
+      classes += " border-color-x-$x";
+    } else if (y != null) {
+      classes += " border-color-y-$y";
+    } else if (inlineStart != null) {
+      classes += " border-color-s-$inlineStart";
+    } else if (inlineEnd != null) {
+      classes += " border-color-e-$inlineEnd";
+    }
+    return classes.trim();
+  }
+}
+
+enum TWBorderWidthValue {
+  width0,
+  width1,
+  width2,
+  width4,
+  width8,
+}
+
+extension TWBorderWidthExtension on TWBorderWidthValue {
+  String get name {
+    if (this == TWBorderWidthValue.width1) {
+      return '';
+    }
+    final number =
+        toString().split('.').last.substring(5); // remove 'span' prefix
+    return number;
   }
 }
 
 class TWBorderWidth {
-  final TWSpacingValue value;
+  late final TWBorderWidthValue? value;
+  late final TWBorderWidthValue? left;
+  late final TWBorderWidthValue? top;
+  late final TWBorderWidthValue? bottom;
+  late final TWBorderWidthValue? right;
+  late final TWBorderWidthValue? x;
+  late final TWBorderWidthValue? y;
+  late final TWBorderWidthValue? inlineStart;
+  late final TWBorderWidthValue? inlineEnd;
 
-  TWSpacingUnit({required this.value});
+  TWBorderWidth.all({required this.value});
+
+  TWBorderWidth.only({this.left, this.top, this.right, this.bottom});
+
+  TWBorderWidth.ltrb(this.left, this.top, this.right, this.bottom);
+
+  TWBorderWidth.symmetric({this.x, this.y});
+
+  TWBorderWidth.inline({this.inlineEnd, this.inlineStart});
+
+  TWBorderWidth({required this.value});
 
   @override
   String toString() {
-    return value.name;
+    String classes = "";
+    if (value != null) {
+      classes += " border-$value";
+    } else if (left != null) {
+      classes += " border-l-$left";
+    } else if (right != null) {
+      classes += " border-r-$right";
+    } else if (top != null) {
+      classes += " border-t-$top";
+    } else if (bottom != null) {
+      classes += " border-b-$bottom";
+    } else if (x != null) {
+      classes += " border-x-$x";
+    } else if (y != null) {
+      classes += " border-y-$y";
+    } else if (inlineStart != null) {
+      classes += " border-s-$inlineStart";
+    } else if (inlineEnd != null) {
+      classes += " border-e-$inlineEnd";
+    }
+    return classes.trim().replaceAll("border-", "border");
   }
 }
 
-class TWBorderRadius {
-  final TWSpacingValue value;
-
-  TWSpacingUnit({required this.value});
-
-  @override
-  String toString() {
-    return value.name;
-  }
+enum TWBorderRadiusValue {
+  none,
+  roundsm,
+  round,
+  roundmd,
+  roundlg,
+  roundxl,
+  round2xL,
+  round3xl,
+  roundfull
 }

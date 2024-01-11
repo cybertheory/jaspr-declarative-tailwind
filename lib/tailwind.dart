@@ -147,18 +147,20 @@ class _TWCombinedGenerator extends TWGenerators {
 
 class _TWBorderGenerator extends TWGenerators {
   // Border properties
-  String? borderWidth;
+  TWBorderWidth? width;
+  TWBorderColor? color;
   String? borderStyle;
   String? borderRadius;
 
   _TWBorderGenerator({
-    this.borderWidth,
+    this.color,
+    this.width,
     this.borderStyle,
     this.borderRadius,
   }) {
     // Border width
-    if (borderWidth != null) {
-      classes.add('border-$borderWidth');
+    if (width != null) {
+      classes.add('$width');
     }
 
     // Border style
