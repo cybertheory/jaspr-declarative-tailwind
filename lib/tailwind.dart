@@ -8,7 +8,8 @@ class TWClassList extends ListBase<String> {
     customClasses.addAll(generators.classes);
   }
 
-  String toClasses() {
+  @override
+  String toString() {
     return customClasses.join(' ');
   }
 

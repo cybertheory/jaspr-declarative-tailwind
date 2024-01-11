@@ -1,5 +1,5 @@
-import '../tailwind.dart';
-import '../utils.dart';
+import '../lib/tailwind.dart';
+import '../lib/utils.dart';
 import 'package:test/test.dart';
 
 void main() {

@@ -98,6 +98,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "domino",
+      "rootUri": "file:///Users/rishabhsingh/.pub-cache/hosted/pub.dev/domino-0.8.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "file",
       "rootUri": "file:///Users/rishabhsingh/.pub-cache/hosted/pub.dev/file-7.0.0",
       "packageUri": "lib/",
@@ -165,9 +171,9 @@
     },
     {
       "name": "jaspr",
-      "rootUri": "file:///Users/rishabhsingh/.pub-cache/hosted/pub.dev/jaspr-0.3.0",
+      "rootUri": "file:///Users/rishabhsingh/.pub-cache/hosted/pub.dev/jaspr-0.1.5",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.16"
     },
     {
       "name": "jaspr_tailwind",
@@ -270,12 +276,6 @@
       "rootUri": "file:///Users/rishabhsingh/.pub-cache/hosted/pub.dev/shelf-1.4.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
-    },
-    {
-      "name": "shelf_gzip",
-      "rootUri": "file:///Users/rishabhsingh/.pub-cache/hosted/pub.dev/shelf_gzip-4.1.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.13"
     },
     {
       "name": "shelf_packages_handler",
@@ -416,7 +416,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-01-11T19:28:11.364252Z",
+  "generated": "2024-01-11T19:41:41.301607Z",
   "generator": "pub",
   "generatorVersion": "3.2.3"
 }
