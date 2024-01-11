@@ -1,0 +1,4 @@
+{
+    "name": "jaspr-declaritive-tailwind",
+    "decription": "JDT allows devs to generate inline tailwind classes in a declaritive style, similar to Flutter and Jaspr"
+}
