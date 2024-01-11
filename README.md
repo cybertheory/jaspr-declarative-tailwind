@@ -29,7 +29,7 @@ i.e
           generators: TWGenerators.layout(flex: TWFlexValue.flexAuto));
 ```
 
-If you need a super-string of all classes, We have overridden the toString method
+If you need a super-string of all classes, use `TWClassList` like a string
 ```dart
   print(TWClassList(
           generators: TWGenerators.layout(flex: TWFlexValue.flexAuto)));
