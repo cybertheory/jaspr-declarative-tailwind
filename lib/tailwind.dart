@@ -162,6 +162,10 @@ class _TWBorderGenerator extends TWGenerators {
     if (width != null) {
       classes.add('$width');
     }
+    // Border width
+    if (color != null) {
+      classes.add('$color');
+    }
 
     // Border style
     if (borderStyle != null) {
