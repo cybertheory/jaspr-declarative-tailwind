@@ -179,3 +179,135 @@ class TWSpacingUnit {
     return value.name;
   }
 }
+
+enum TWColor {
+  transparent,
+  current,
+  black,
+  white,
+  gray100,
+  gray200,
+  gray300,
+  gray400,
+  gray500,
+  gray600,
+  gray700,
+  gray800,
+  gray900,
+  red100,
+  red200,
+  red300,
+  red400,
+  red500,
+  red600,
+  red700,
+  red800,
+  red900,
+  yellow100,
+  yellow200,
+  yellow300,
+  yellow400,
+  yellow500,
+  yellow600,
+  yellow700,
+  yellow800,
+  yellow900,
+  green100,
+  green200,
+  green300,
+  green400,
+  green500,
+  green600,
+  green700,
+  green800,
+  green900,
+  blue100,
+  blue200,
+  blue300,
+  blue400,
+  blue500,
+  blue600,
+  blue700,
+  blue800,
+  blue900,
+  indigo100,
+  indigo200,
+  indigo300,
+  indigo400,
+  indigo500,
+  indigo600,
+  indigo700,
+  indigo800,
+  indigo900,
+  purple100,
+  purple200,
+  purple300,
+  purple400,
+  purple500,
+  purple600,
+  purple700,
+  purple800,
+  purple900,
+  pink100,
+  pink200,
+  pink300,
+  pink400,
+  pink500,
+  pink600,
+  pink700,
+  pink800,
+  pink900,
+}
+
+class TWBorderColor {
+  
+  final TWColor? color;
+  final TWColor? left;
+  final TWColor? top;
+  final TWColor? bottom;
+  final TWColor? right;
+  final TWColor? x;
+  final TWColor? y;
+  final TWColor? inlineStart;
+  final TWColor? inlineEnd;
+
+  TWBorderColor.all({required this.color});
+
+  TWBorderColor.only({this.left, this.top, this.right, this.bottom});
+
+  TWBorderColor.ltrb(this.left, this.top, this.right, this.bottom);
+
+  TWBorderColor.symmetric({this.x, this.y});
+
+  TWBorderColor.inline({this.inlineEnd, this.inlineStart});
+
+  @override
+  String toString() {
+     if (container != null) container!.name,
+      if (mxAuto) 'mx-auto',
+      if (flex != null) ...['flex', 'flex-${flex!.name}'],
+      if (flexDirection != null) 'flex-${flexDirection!.name}',
+  }
+}
+
+class TWBorderWidth {
+  final TWSpacingValue value;
+
+  TWSpacingUnit({required this.value});
+
+  @override
+  String toString() {
+    return value.name;
+  }
+}
+
+class TWBorderRadius {
+  final TWSpacingValue value;
+
+  TWSpacingUnit({required this.value});
+
+  @override
+  String toString() {
+    return value.name;
+  }
+}

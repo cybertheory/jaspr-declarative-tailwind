@@ -1,4 +1,3 @@
-import '../generators/effect_generator.dart';
 import '../tailwind.dart';
 import '../utils.dart';
 
