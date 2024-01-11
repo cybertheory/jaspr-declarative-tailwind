@@ -1,5 +1,5 @@
 # jaspr-declarative-tailwind
-A declarative Tailwind class generator written in dart
+A declarative Tailwind class generator written in dart. Create a list or string of Tailwind classes using a declarative interface, similar to Flutter and Jaspr.
 ```bash
 dart pub add jaspr-declarative-tailwind
 ```
