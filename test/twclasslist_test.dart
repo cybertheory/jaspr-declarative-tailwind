@@ -1,10 +1,10 @@
-import '../lib/tailwind.dart';
-import '../lib/utils.dart';
+import 'package:jaspr_declarative_tailwind/tailwind.dart';
+import 'package:jaspr_declarative_tailwind/utils.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('TWClassList', () {
-    test('toClasses returns correct string', () {
+    test('returns correct string', () {
       final generators = TWGenerators.layout(
         container: TWContainerType.container,
         mxAuto: true,
@@ -28,7 +28,7 @@ void main() {
       final twClassList = TWClassList(generators: generators);
 
       expect(
-          twClassList.toClasses(),
+          twClassList.toString(),
           equals(
               'container mx-auto flex flex-flex flex-row justify-center items-center grid-cols-span-2 col-span-1 grid-rows-span-3 row-span-2 position-relative top-4 right-8 bottom-12 left-16 display-inlineFlex visible-visible'));
     });
@@ -48,10 +48,8 @@ void main() {
       expect(twClassList.length, equals(1));
       expect(twClassList[0], equals('custom-class-1'));
     });
-  });
 
-  group('TWGenerators', () {
-    test('layout generator creates correct classes', () {
+    test('generator creates correct classes', () {
       final generators = TWGenerators.layout(
         container: TWContainerType.containerSm,
         mxAuto: true,
@@ -71,9 +69,9 @@ void main() {
         display: TWDisplayType.inlineGrid,
         visibility: TWVisibilityType.invisible,
       );
-
+      List<String> classes = TWClassList(generators: generators);
       expect(
-          generators.classes,
+          classes,
           equals([
             'containerSm',
             'mx-auto',

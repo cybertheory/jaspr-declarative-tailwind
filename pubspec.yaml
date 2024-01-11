@@ -1,6 +1,6 @@
 name: jaspr_declarative_tailwind
 description: A declarative tailwind generator for dart.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/cybertheory/jaspr-declarative-tailwind
 issue_tracker: https://github.com/cybertheory/jaspr-declarative-tailwind/issues
 documentation: https://docs.page/schultek/jaspr
