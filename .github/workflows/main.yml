@@ -1,0 +1,12 @@
+on:
+  push:
+    branches:
+    - main
+jobs:
+  Publish-Dart-Package:
+    permissions:
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dart Publish
+        uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
